@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film Detayı</title>
+</head>
+<body>
+    <h1>Film Detayı</h1>
+    
+    {% for poster_url in poster_urls %}
+        <img src="{{ poster_url }}" alt="Film Poster">
+    {% endfor %}
+    
+</body>
+</html>
+{% endblock content %}

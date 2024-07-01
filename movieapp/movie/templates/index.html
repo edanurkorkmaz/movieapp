@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Film Arama</title>
+    <style>
+        .film-poster {
+            max-width: 300px; /* Maksimum genişlik ayarı */
+            height: auto; /* Yüksekliği otomatik olarak ayarla */
+            margin-bottom: 10px; /* İstenirse alt boşluk ekleyebilirsiniz */
+        }
+    </style>
+</head>
+<body>
+    
+    {% if title %}
+        <h2>{{ title }}</h2>
+        {% if poster_url %}
+            <img src="{{ poster_url }}" alt="Film Poster" class="film-poster">
+        {% endif %}
+        <p>Yayın Tarihi: {{ release_date }}</p>
+        <p>{{ overview }}</p>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    
+</body>
+</html>
+
+{% endblock %}
